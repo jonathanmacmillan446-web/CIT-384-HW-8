@@ -1,0 +1,291 @@
+/* Color Palette
+# - #2A2D43 - dark navy (header & footer background)
+# - #EAEFF3 - light gray-blue (work experience background)
+# - #B8C4D6 - steel blue (education background)
+# - #E5243F - red (links, accents & skills background)
+# - #8D93AB - muted gray (secondary text)
+*/
+
+/* Global styles
+------------------------------------*/
+/* Box model fix: padding and borders are included in an element's width */
+html {
+    box-sizing: border-box;
+    /* Smooth scrolling for nav links; offset so the fixed nav doesn't cover section headings */
+    scroll-behavior: smooth;
+    scroll-padding-top: 70px;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+body {
+    margin: 0;
+    background: #EAEFF3;
+    color: #222;
+    font-family: 'Lato', sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    /* Room for the fixed nav bar so it doesn't cover the header */
+    padding-top: 56px;
+}
+
+h1,
+h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+}
+
+h1 {
+    font-size: 3.5em;
+    margin: 0.25em 0;
+}
+
+h2 {
+    font-size: 2em;
+    margin-top: 0;
+}
+
+h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    font-size: 1.2em;
+    margin-bottom: 0;
+}
+
+a {
+    color: #E5243F;
+}
+
+/* Keeps content from spanning the whole page; reused in every section */
+.content-wrap {
+    max-width: 950px;
+    margin: 0 auto;
+    padding: 50px;
+    overflow: hidden;
+}
+
+/* Reusable two-column layout */
+.column-narrow {
+    width: 30%;
+    float: left;
+    padding-right: 3%;
+    min-height: 175px;
+}
+
+.column-wide {
+    width: 70%;
+    float: left;
+    min-height: 225px;
+}
+
+
+/* Navigation menu
+------------------------------------*/
+/* Nav built from plain links (no list); fixed so it stays at the top while scrolling */
+.main-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background: rgba(42, 45, 67, 0.95);
+    text-align: center;
+    padding: 8px 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.main-nav a {
+    display: inline-block;
+    color: #FFFFFF;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    text-decoration: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+}
+
+.main-nav a:hover {
+    background: #E5243F;
+}
+
+.main-nav .nav-pdf {
+    border: 2px solid #E5243F;
+}
+
+
+/* Header & Footer
+------------------------------------*/
+header,
+footer {
+    background: #2A2D43;
+    color: #FFFFFF;
+    padding: 40px;
+}
+
+header img {
+    width: 230px;
+    height: 230px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+header h1,
+header h2 {
+    margin: 0;
+}
+
+.profile-img {
+    /* width: 300px; */
+    /* float: left; */
+    /* margin-right: 30px; */
+    border-radius: 50%;
+}
+
+header p,
+footer p {
+    color: #8D93AB;
+}
+
+footer {
+    text-align: center;
+}
+
+footer h2 {
+    color: #8D93AB;
+}
+
+footer a {
+    margin: 0 10px;
+}
+
+.contact-info a,
+.contact-location {
+    padding: 10px;
+    display: inline-block;
+    font-size: 1.1em;
+}
+
+.contact-location {
+    color: #8D93AB;
+    margin: 0 10px;
+}
+
+.contact-info a {
+    text-decoration: none;
+}
+
+.contact-info a:hover {
+    text-decoration: underline;
+}
+
+/* Font Awesome icons in the footer */
+.contact-info i {
+    font-size: 1.4em;
+    margin-right: 6px;
+    vertical-align: middle;
+}
+
+
+/* Work Experience
+------------------------------------*/
+.work {
+    background: #EAEFF3;
+    padding: 40px;
+}
+
+.company {
+    text-transform: uppercase;
+}
+
+
+/* Skills
+------------------------------------*/
+/* Background image with an RGB + alpha transparency gradient layered on top */
+.skills {
+    background: linear-gradient(rgba(229, 36, 63, 0.85), rgba(42, 45, 67, 0.75)), url("../images/skills-bg.jpg") no-repeat;
+    background-size: cover; /* must come after the shorthand, or the shorthand resets it */
+    background-position: center;
+    color: #FFFFFF;
+    padding: 40px;
+}
+
+.skills ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    list-style: none;
+    padding: 0;
+}
+
+.skills li {
+    background: #FFFFFF;
+    color: #E5243F;
+    font-weight: 700;
+    padding: 6px 16px;
+    border-radius: 20px;
+}
+
+
+/* Education
+------------------------------------*/
+.education {
+    background: #B8C4D6;
+    padding: 40px;
+}
+
+
+/* Print / PDF version
+------------------------------------*/
+@media print {
+    .main-nav {
+        display: none;
+    }
+
+    body {
+        padding-top: 0;
+        font-size: 13px;
+    }
+
+    header,
+    footer,
+    .work,
+    .skills,
+    .education {
+        padding: 10px;
+    }
+
+    .content-wrap {
+        padding: 25px;
+    }
+
+    h1 {
+        font-size: 2.6em;
+    }
+
+    header .profile-img {
+        width: 160px;
+        height: 160px;
+        padding: 0;
+        margin-right: 40px;
+    }
+
+    .column-narrow,
+    .column-wide {
+        min-height: 0;
+    }
+
+    section,
+    footer {
+        break-inside: avoid;
+    }
+
+    /* Keep section background colors and images when printing */
+    * {
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+}
