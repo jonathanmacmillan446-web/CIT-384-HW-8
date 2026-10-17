@@ -1,9 +1,9 @@
 Jonathan MacMillan
 
-# CIT384-HW7
+# CIT384-HW8
 
-Repo for HW7 - HTML
+Repo for HW8 - HTML
 
 ## Live Site
 
-https://jonathanmacmillan446-web.github.io/CIT-384-HW-7/
+https://jonathanmacmillan446-web.github.io/CIT-384-HW-8/
